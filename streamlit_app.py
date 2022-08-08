@@ -47,6 +47,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.table(html)
+
 # Saving the dataframe as a webpage
 
 st.download_button(
