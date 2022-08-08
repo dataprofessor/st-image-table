@@ -45,7 +45,7 @@ st.markdown(
 
 def convert_df(input_df):
      # IMPORTANT: Cache the conversion to prevent computation on every rerun
-     return input_df.to_html(escape=False, formatters=dict(Country=path_to_image_html)).encode('utf-8')
+     return input_df.to_html(escape=False, formatters=dict(Country=path_to_image_html))
 
 html = convert_df(df)
 
