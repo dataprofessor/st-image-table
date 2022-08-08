@@ -47,7 +47,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.table(html)
+st.write(html)
 
 # Saving the dataframe as a webpage
 
