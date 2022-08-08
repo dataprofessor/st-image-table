@@ -1,10 +1,7 @@
 import streamlit as st
+import pandas as pd
 
 st.title('🎈 Image Table Demo')
-
-import pandas as pd
-import streamlit as st
-
 
 df = pd.DataFrame(
     [
