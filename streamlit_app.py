@@ -41,5 +41,17 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Saving the dataframe as a webpage - works
-df.to_html("webpage.html", escape=False, formatters=dict(Country=path_to_image_html))
+# Saving the dataframe as a webpage
+
+def convert_df(input_df):
+     # IMPORTANT: Cache the conversion to prevent computation on every rerun
+     return input_df.to_html("webpage.html", escape=False, formatters=dict(Country=path_to_image_html)).encode('utf-8')
+
+html = convert_df(df)
+
+st.download_button(
+     label="Download data as HTML",
+     data=html,
+     file_name='output.html',
+     mime='text/html',
+ )
