@@ -1,4 +1,4 @@
-# Name of Streamlit App
+# st-demo-image-table
 
 Description of the app ...
 
