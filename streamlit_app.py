@@ -35,19 +35,19 @@ df["Country"] = country
 def path_to_image_html(path):
     return '<img src="' + path + '" width="60" >'
 
-
-st.markdown(
-    df.to_html(escape=False, formatters=dict(Country=path_to_image_html)),
-    unsafe_allow_html=True,
-)
-
-# Saving the dataframe as a webpage
-
+@st.cache
 def convert_df(input_df):
      # IMPORTANT: Cache the conversion to prevent computation on every rerun
      return input_df.to_html(escape=False, formatters=dict(Country=path_to_image_html))
 
 html = convert_df(df)
+
+st.markdown(
+    html,
+    unsafe_allow_html=True
+)
+
+# Saving the dataframe as a webpage
 
 st.download_button(
      label="Download data as HTML",
